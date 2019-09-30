@@ -21,5 +21,5 @@ RUN conda create -n py36 python=3.6 pip
 RUN /bin/bash -c "conda init bash && \ 
     exec bash && \
     conda activate py36"
-CMD /bin/bash -c "exec bash && \
+ENTRYPOINT /bin/bash -c "exec bash && \
     conda activate py36"
