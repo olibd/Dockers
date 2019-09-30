@@ -19,6 +19,6 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.7.10-Linux-x86
 
 RUN conda create -n py36 python=3.6 pip
 CMD /bin/bash -c ". conda init bash && \ 
-    exec bash
+    exec bash && \
     conda activate py36 && \ 
     pip install -r /tmp/requirements.txt"
