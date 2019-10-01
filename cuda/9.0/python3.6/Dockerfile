@@ -18,8 +18,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.7.10-Linux-x86
     /opt/conda/bin/conda clean -afy
 
 RUN conda create -n py36 python=3.6 pip
-RUN /bin/bash -c "conda init bash && \ 
-    exec bash && \
-    conda activate py36"
-ENTRYPOINT /bin/bash -c "exec bash && \
-    conda activate py36"
+RUN /bin/bash -c "conda init bash"
+RUN echo "conda activate py36" >> ~/.bashrc
+
+ENTRYPOINT ["/bin/bash"]
